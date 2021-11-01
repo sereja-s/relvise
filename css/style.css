@@ -170,18 +170,22 @@ body {
 /* .page__contact {
 } */
 /* ---HEADER-BLOCK------------------------------------------------------------------------- */
+/* 1 (advantages) */
 .header-block {
 	text-align: center;
 	letter-spacing: 0.2px;
 }
+/* 2 */
 .header-block__title {
 	line-height: 142%;
 	font-weight: 700;
 	font-size: 40px;
 }
+/* 4 */
 .header-block__title:not(:last-child) {
 	margin: 0px 0px 10px 0px;
 }
+/* 3 */
 .header-block__sub-title {
 	line-height: 142%;
 	color: #737373;
@@ -404,6 +408,7 @@ body {
 	line-height: 142%;
 }
 /* --------------------------------------------- */
+/* 5 начало в HEADER-BLOCK (выше) */
 .advantages {
 	padding: 80px 0;
 }
@@ -417,8 +422,9 @@ body {
 		padding: 40px 0;
 	}
 }
-.advantages__container {
-}
+/* .advantages__container {
+} */
+/* 6 */
 .advantages__header {
 	margin: 0px 0px 50px 0px;
 }
@@ -427,15 +433,17 @@ body {
 		margin: 0px 0px 25px 0px;
 	}
 }
+/* 7 */
 .advantages__body {
 	display: flex;
 	flex-wrap: wrap;
-	margin: 0px -15px -30px;
+	margin: 0px -15px -30px; /* 1-отрицательный отступ для всего блока карточек (справа и слева), а также снизу блок расширили */
 }
+/* 8 */
 .advantages__column {
-	padding: 0px 15px;
-	margin: 0px 0px 30px 0px;
-	flex: 0 1 25%;
+	padding: 0px 15px; /* 2-таким способом крайние отступы скомпенсируются в ноль, а между колонками будет расстояние 2*15=30рх */
+	margin: 0px 0px 30px 0px; /* 3- появятся отступы под карточками при перестроении */
+	flex: 0 1 25%; /* указали для карточек: не могут расширяться, могут сжиматься, занимают 25% длины блока (4 карточки в ряд) */
 }
 
 @media (max-width: 1020px) {
@@ -448,26 +456,31 @@ body {
 		flex: 0 1 100%;
 	}
 }
-
+/* 9 */
 .advantages__item {
 	background-color: #fff;
 	padding: 30px;
 	font-weight: 700;
 	text-align: center;
 }
+/* 12 */
 .advantages__item > *:not(:last-child) {
 	margin: 0px 0px 10px 0px;
 }
+/* 13 */
+/* т.к. все иконки разного размера */
 .advantages__icon {
-	height: 48px;
-	display: flex;
-	align-items: flex-end;
-	justify-content: center;
+	height: 48px; /* 1-укажем высоту большей */
+	display: flex; /* 2-делаем иконки flex-элементами */
+	align-items: flex-end; /* 3-позиционируем их внизу */
+	justify-content: center; /* 4- и по центру */
 }
+/* 10 */
 .advantages__value {
 	font-size: 40px;
 	line-height: 142%;
 }
+/* 11 */
 .advantages__text {
 	letter-spacing: 0.1px;
 	color: #737373;
@@ -476,6 +489,7 @@ body {
 }
 
 /* -------------------------------- */
+/* 4 */
 .practice {
 	padding: 125px 0px 80px 0px;
 }
@@ -489,8 +503,9 @@ body {
 		padding: 0px 0px 40px 0px;
 	}
 }
-.practice__container {
-}
+/* .practice__container {
+} */
+/* 1 */
 .practice__header {
 	margin: 0px 0px 45px 0px;
 }
@@ -499,15 +514,16 @@ body {
 		margin: 0px 0px 25px 0px;
 	}
 }
-
+/* 2 */
 .practice__body {
-	margin: 0px -20px -30px;
+	margin: 0px -20px -30px; /* 1- добавили отрицательный отступ (общий) */
 	display: flex;
 	flex-wrap: wrap;
 }
+/* 3 */
 .practice__column {
-	padding: 0px 20px;
-	margin: 0px 0px 30px 0px;
+	padding: 0px 20px; /* 2-указали(скомпенсировали) положительный отступ (справа и слева) */
+	margin: 0px 0px 30px 0px; /* 3-указали(скомпенсировали) положительный отступ(внизу) при складывании карточек на адаптиве */
 	flex: 0 1 25%;
 }
 
@@ -522,41 +538,49 @@ body {
 	}
 }
 
-.practice__item {
-}
+/* .practice__item {
+} */
+/* 5 */
 .item-practice {
 	background-color: #fff;
+	/* Что бы карточки были одной высоты: */
 	display: flex;
 	height: 100%;
 	flex-direction: column;
 }
+/* 6 */
 .item-practice__content {
 	padding: 30px;
-	flex: 1 1 auto;
+	flex: 1 1 auto; /* контент будет расширяться(сужаться) и придавливать картинку вниз */
 }
+/* 7 */
 .item-practice__link {
 	color: inherit;
-	display: inline-block;
+	display: inline-block; /* что бы срабатывали отступы и др. для строчного тэга(ссылка) */
 }
 .item-practice__link:hover {
 	text-decoration: underline;
 }
+/* 10 */
 .item-practice__link:not(:last-child) {
-	margin: 0px 0px 15px 0px;
+	margin: 0px 0px 15px 0px; /* что бы отступ подействовал,нужно строчной тэг(ссылка) переделать в строчно-блочный inline-block; */
 }
+/* 8 */
 .item-practice__title {
 	letter-spacing: 0.1px;
 	font-size: 16px;
 	font-weight: 700;
 	line-height: 150%;
 }
+/* 9 */
 .item-practice__text {
 	color: #737373;
 	line-height: 142%;
 }
+/* 11 */
 .item-practice__image {
 	display: block;
-	padding: 0px 0px 60% 0px;
+	padding: 0px 0px 60% 0px; /* Что бы отобразить картинку, делаем расчёт внутреннего отступа(поля) вниз: (высота картинки/длина картинки)*100%=(138/230)*100%=60% */
 }
 /* ------------------------------------- */
 .whoweare {
