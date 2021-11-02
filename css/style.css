@@ -583,85 +583,102 @@ body {
 	padding: 0px 0px 60% 0px; /* Что бы отобразить картинку, делаем расчёт внутреннего отступа(поля) вниз: (высота картинки/длина картинки)*100%=(138/230)*100%=60% */
 }
 /* ------------------------------------- */
+/* 1 */
 .whoweare {
 	background: #ffffff;
 	padding: 80px 0px 130px 0px;
 }
-.whoweare__container {
-}
+/* .whoweare__container {
+} */
+/* 2 */
 .whoweare__header {
 	margin: 0px 0px 100px 0px;
 }
+/* 3 */
 .whoweare__body {
 	display: flex;
-	align-items: flex-start;
+	align-items: flex-start; /* прижимаем контент к началу (здесь верх) */
 }
+/* 4 */
 .whoweare__video {
-	flex: 0 0 57%;
+	flex: 0 0 57%; /* запрещаем расширяться и сжиматься колонке с видео и вычисляем длину в ограничивающем контейнере 
+	(600/1046)*100%=57% */
 	position: relative;
-	padding: 0px 0px 42.25% 0px;
+	padding: 0px 0px 42.25% 0px; /* для указания размера видео используем %-но задающий внутренний отступ(поля): (высота окна видео/ширину ограничиващего контейнера, а не окна видео(родителя) т.к. здесь родитель-.whoweare__video является не только структурным элементом,но и контентным)*100%=(442/1046)*100%=42.25% */
 }
+/* 5 */
 .whoweare__video iframe {
-	position: absolute;
+	position: absolute; /* применили абсолютное позиционирование, относительно родителя .whoweare__video с обязательным для него указанием свойства-position: relative; */
 	width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
 	object-fit: cover;
 }
+/* 6 */
 .whoweare__content {
 	flex: 1 1 auto;
 	padding: 20px 0px 0px 121px;
 }
+/* 7 */
 .whoweare__title {
 	font-weight: 800;
 	font-size: 40px;
 	line-height: 142%;
 	letter-spacing: 0.2px;
 }
+/* 10 */
 .whoweare__title:not(:last-child) {
 	margin: 0px 0px 10px 0px;
 }
+/* 8 */
 .whoweare__text {
 	color: #737373;
 	line-height: 142%;
 }
+/* 9 */
 .whoweare__top:not(:last-child) {
 	margin: 0px 0px 50px 0px;
 }
-.whoweare__items {
-}
-.whoweare__item {
-}
+/* .whoweare__items {
+} */
+/* .whoweare__item {
+} */
+/* 16 */
 .whoweare__item:not(:last-child) {
 	margin: 0px 0px 30px 0px;
 }
-
+/* 11 */
 .item-whoweare {
 	display: flex;
 }
+/* 12 */
 .item-whoweare__icon {
-	flex: 0 0 32px;
+	flex: 0 0 32px; /* запретили иконкам расширяться(сужаться), указали длину 32рх */
 }
+/* 13 */
 .item-whoweare__body {
-	flex: 1 1 auto;
+	flex: 1 1 auto; /* для информации рядом позволили расширяться(сужаться), длина вычисляется автоматически (от контента рядом) */
 	padding: 0px 0px 0px 20px;
 }
+/* 14 */
 .item-whoweare__title {
 	font-weight: 700;
 	font-size: 16px;
 	line-height: 150%;
 }
+/* 15 */
 .item-whoweare__title:not(:last-child) {
 	margin: 0px 0px 5px 0px;
 }
+/* 17 */
 .item-whoweare__text {
 	color: #737373;
-	white-space: nowrap;
+	white-space: nowrap; /* Запрещает тексту переносится на другую строку, даже если он не помещается в ширину контейнера (в этом случае текст просто вылезет за его границы) */
 	line-height: 142%;
-	width: 225px;
-	overflow: hidden;
-	text-overflow: ellipsis;
+	width: 225px; /* указали длину текста, которая будет показана */
+	overflow: hidden; /* Скрывает то содержимое, которое вылезло за границы блока */
+	text-overflow: ellipsis; /* Добавляет в конец обрезанного текста троеточие */
 }
 @media (max-width: 1080px) {
 	.whoweare__content {
@@ -673,8 +690,8 @@ body {
 		padding: 50px 0px 50px 0px;
 	}
 	.whoweare__body {
-		flex-direction: column-reverse;
-		align-items: stretch;
+		flex-direction: column-reverse; /* перестроили flex-контейнер в колонку и сделали реверс (что бы текст стал перед видео) */
+		align-items: stretch; /* Блоки растянуты, занимая все доступное место по поперечной оси (если не указать это свойство, блок с видео не будет показан, т.к. ранее мы укзали: align-items: flex-start (эдесь из-за реверса-блок будет схлопнут) */
 	}
 	.whoweare__title {
 		font-size: 24px;
@@ -683,7 +700,7 @@ body {
 		padding: 0px 0px 0px 0px;
 	}
 	.whoweare__video {
-		padding: 0px 0px 56.25% 0px;
+		padding: 0px 0px 56.25% 0px; /* здесь меняем процентный внутренний отступ(поля) и так изменим размер окна для видео */
 	}
 	.whoweare__video:not(:last-child) {
 		margin: 50px 0px 0px 0px;
@@ -704,6 +721,7 @@ body {
 	}
 }
 /* ----------------------------------- */
+/* 1 */
 .clients {
 	padding: 50px 0;
 }
@@ -712,28 +730,31 @@ body {
 		padding: 30px 0;
 	}
 }
-.clients__container {
-}
+/* .clients__container {
+} */
+/* 2 */
 .clients__items {
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
 	justify-content: center;
 }
+/* 3 */
 .clients__item {
 	padding: 8px 15px;
 	flex: 0 1 16.6667%;
 	text-align: center;
-	min-width: 140px;
+	min-width: 140px; /* 2-ое действие: что бы элементы опять перестраивались при адаптации */
 }
 .clients__item img {
-	max-width: 100%;
+	max-width: 100%; /* 1-ое действие: что бы если сюда попадёт большая картинка, то могла адаптироваться */
 }
 /* ----------------------------- */
 .subscribe {
-	position: relative;
+	position: relative; /* 1-е действие (делаем синюю полоску под блоком .subscribe с помощью псевдоэлемента- ::before) */
 	padding: 0px 0px 20px 0px;
 }
+/* 2-е действие (делаем синюю полоску под блоком .subscribe с помощью псевдоэлемента- ::before) */
 .subscribe::before {
 	content: "";
 	position: absolute;
@@ -743,11 +764,14 @@ body {
 	left: 0;
 	background: #252b42;
 }
-.subscribe__container {
-}
+/* .subscribe__container {
+} */
+/* 1 */
 .subscribe__body {
+	/* 3-е действие (делаем синюю полоску под блоком .subscribe с помощью псевдоэлемента- ::before) */
 	position: relative;
-	z-index: 2;
+	z-index: 2; /* что бы синяя полоска легла под блок subscribe*/
+
 	padding: 30px 50px;
 	align-items: center;
 	background: #17213c;
@@ -759,6 +783,7 @@ body {
 		margin: 0px 30px;
 	}
 }
+/* 2 */
 .subscribe__title {
 	color: #fff;
 	font-size: 133%;
@@ -771,7 +796,7 @@ body {
 		margin: 0px 0px 20px 0px;
 	}
 	.subscribe__body {
-		margin: 0px -15px;
+		margin: 0px -15px; /* раздвинули (убрали оступы справа и слева) */
 		padding: 20px 15px;
 	}
 }
@@ -785,12 +810,13 @@ body {
 		justify-content: space-between;
 	}
 }
-
+/* 3 */
 .subscribe__form {
 	flex: 0 1 50%;
 	display: flex;
 	align-items: center;
 }
+/* 4 */
 .subscribe__input {
 	width: 100%;
 	flex: 1 1 auto;
@@ -806,7 +832,7 @@ body {
 .subscribe__input:focus {
 	color: #000;
 }
-
+/* 5 */
 .subscribe__button {
 	background: #ff7b47;
 	border: 1px solid #e6e6e6;
@@ -834,21 +860,25 @@ body {
 }
 
 /* ----------------------------------- */
+/* 1 */
 .getintouch {
 	padding: 80px 0px 135px 0px;
 }
-.getintouch__container {
-}
+/* .getintouch__container {
+} */
+/* 2 */
 .getintouch__header {
 	margin: 0px 0px 80px 0px;
 }
+/* 3 */
 .getintouch__items {
-	margin: 0px -15px;
+	margin: 0px -15px; /* расширили блок */
 }
-
+/* 6 */
 .getintouch__item {
 	flex: 0 1 33.333%;
 }
+/* 4 */
 .item-getintouch {
 	display: flex;
 	flex-direction: column;
@@ -857,27 +887,32 @@ body {
 	background-color: #fff;
 	padding: 50px 15px;
 }
+/* 11 */
 .item-getintouch_active {
 	background: #252b42;
 	padding: 80px 15px;
 	color: #fff;
 }
+/* 12 */
+/* Обращаемся к кнопке внутри средней карточки(активной) */
 .item-getintouch_active .item-getintouch__button {
 	border: 1px solid #fff;
 	color: #fff;
 }
-
+/* 8 */
 .item-getintouch > *:not(:last-child) {
 	margin: 0px 0px 15px 0px;
 }
-.item-getintouch__icon {
-}
+/* .item-getintouch__icon {
+} */
+/* 5 */
 .item-getintouch__emails {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
+/* 7 */
 .item-getintouch__email {
 	color: inherit;
 	font-weight: 600;
@@ -887,11 +922,13 @@ body {
 .item-getintouch__email:hover {
 	text-decoration: underline;
 }
+/* 10 */
 .item-getintouch__label {
 	font-weight: 700;
 	font-size: 16px;
 	line-height: 150%;
 }
+/* 9 */
 .item-getintouch__button {
 	border: 1px solid #ff7b47;
 	min-height: 44px;
@@ -936,17 +973,18 @@ body {
 	}
 }
 /* ------------------------------------------ */
+/* 1 */
 .contact {
 	background-color: #fff;
 	padding: 42px 0;
 }
-.contact__container {
-}
-
+/* .contact__container {
+} */
+/* 7 */
 .contact__content {
 	padding: 0px 0px 20px 0px;
 }
-
+/* 2 */
 @media (min-width: 767px) {
 	.contact__body {
 		display: flex;
@@ -957,20 +995,23 @@ body {
 		padding: 0px 20px 0px 0px;
 	}
 }
-
+/* 3 */
 .contact__title {
 	font-weight: 700;
 	letter-spacing: 0.1px;
 	font-size: 24px;
 	line-height: 133%;
 }
+/* 5 */
 .contact__title:not(:last-child) {
 	margin: 0px 0px 10px 0px;
 }
+/* 4 */
 .contact__text {
 	color: #737373;
 	line-height: 142%;
 }
+/* 6 */
 .contact__button {
 	display: flex;
 	background-color: #ff7b47;
@@ -989,25 +1030,29 @@ body {
 
 /* --------------------------------------------------- */
 
-.footer {
-}
+/* .footer {
+} */
+/* 1 */
 .footer__top {
 	background: #17213c;
-	padding: 35px 0;
+	padding: 35px 0; /* 1-отступ сверху и снизу равный 50рх разделили (здесь отняли) */
 }
-.footer__main {
-}
+/* .footer__main {
+} */
+/* 5 */
 .footer__row {
 	display: flex;
 	flex-wrap: wrap;
-	margin: 0px -15px;
+	margin: 0px -15px; /* отступы безопасности */
 }
+/* 2 */
 .footer__column {
-	padding: 15px 15px;
-	flex: 0 1 16.6667%;
+	padding: 15px 15px; /* 2-отступ сверху и снизу равный 50рх разделили (здесь добавили), что бы при перестроении колонок между ними этот отступ оставался */
+	flex: 0 1 16.6667%; /* длина занимаемая колонкой в % исходя из того,что колонок 6-ть (так как последняя занимает 2-е) */
 }
+/* 16 */
 .footer__column:last-child {
-	flex: 0 1 33.334%;
+	flex: 0 1 33.334%; /* расчёт длины последней колонки 16.6667*2=33.334% */
 }
 @media (max-width: 992px) {
 	.footer__column {
@@ -1022,7 +1067,7 @@ body {
 		flex: 0 1 50%;
 	}
 }
-
+/* 3 */
 .footer__label {
 	color: #fff;
 	font-weight: 700;
@@ -1030,19 +1075,21 @@ body {
 	line-height: 150%;
 	margin: 0px 0px 20px 0px;
 }
-.footer__menu {
-}
+/* .footer__menu {
+} */
 
-.menu-footer {
-}
-.menu-footer__list {
-}
+/* .menu-footer {
+} */
+/* .menu-footer__list {
+} */
+/* 4 */
 .menu-footer__item:not(:last-child) {
 	margin: 0px 0px 10px 0px;
 }
+/* 10 */
 .menu-footer__link {
 	color: #fff;
-	display: inline-block;
+	display: inline-block; /* задали что бы сработало свойство line-height для ссылок */
 	line-height: 171%;
 	letter-spacing: 0.2px;
 }
@@ -1050,13 +1097,14 @@ body {
 	text-decoration: underline;
 }
 
-.footer__contacts {
-}
-
+/* .footer__contacts {
+} */
+/* 6 */
 .contacts-footer {
 	display: flex;
 	flex-direction: column;
 }
+/* 8 */
 .contacts-footer__item {
 	padding: 0px 0px 0px 34px;
 	line-height: 142%;
@@ -1068,9 +1116,11 @@ body {
 .contacts-footer__item:hover {
 	text-decoration: underline;
 }
+/* 7 */
 .contacts-footer__item:not(:last-child) {
 	margin: 0px 0px 12px 0px;
 }
+/* 9 */
 .contacts-footer__item_phone {
 	background: url("../img/footer/icons/01.svg") 0 0 no-repeat;
 }
@@ -1080,25 +1130,29 @@ body {
 .contacts-footer__item_email {
 	background: url("../img/footer/icons/03.svg") 0 0 no-repeat;
 }
+/* 11 */
 .footer__bottom {
 	padding: 25px 0;
 }
+/* 12 */
 .footer__container {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
+/* 15 */
 .footer__copy {
 	color: #737373;
 	line-height: 171%;
 }
-.footer__social {
-}
-
+/* .footer__social {
+} */
+/* 13 */
 .social {
 	display: flex;
 	align-items: center;
 }
+/* 14 */
 .social__item:not(:last-child) {
 	margin: 0px 20px 0px 0px;
 }
